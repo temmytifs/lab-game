@@ -12,24 +12,24 @@
     <input type="number" id="guessInput">
     <button onclick="checkGuess()">Submit Guess</button>
     
-    <p id="message"></p>
+    <p id="result"></p>
     
     <script>
-        let print = document.getElementById(`message`);
+        let print = document.getElementById(`result`);
         let  game = Math.floor(Math.random() * 100) + 1;
         let count = 1;
         
         function checkGuess(params) {
-            let guessInput = document.getElementById("guessInput");
+            let guessInput =parseInt(document.getElementById("guessInput").value); 
             count++;
 
             if (guessInput == game) {
-                print.innerHTML = `Congratulations you guesss is right`
+                print.innerHTML = `Congratulations, you have guessed  right in ${count} trails`; 
             } else if (guessInput > game) {
-                print.innerHTML = "your guess is higher! please try again"
+                print.innerHTML = "your guess is higher! please try again";
 
             } else {
-                print.innerHTML = "your guess is lower than! please try agin"
+                print.innerHTML = "your guess is lower! please try again";
             }
             
         }
